@@ -1,9 +1,10 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const ApplyCard = () => {
     return (
-        <div className='w-full flex flex-col items-center '>
-            <h1 className='w-full text-center font-bold text-4xl mb-8 '>Apply for a Card!</h1>
+        <div className='w-full flex flex-col items-center gap-5'>
+            <h1 className='text-center pt-5 text-4xl '>Apply for a Card!</h1>
             <div className='flex flex-row items-center w-[80%] h-[80%] gap-5 bg-gray-700 rounded-2xl'>
                 <form className="w-full flex justify-center" action="">
                     <div className='rounded-2xl pt-4 pb-10 w-[80%] bg-black'>
@@ -40,13 +41,13 @@ const ApplyCard = () => {
                                 <button className="py-2 px-4 bg-[#AB9100] hover:bg-[#ffde44] hover:text-black focus:ring-grey-400 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg" type="submit">Apply</button>
                             </div>
                             <div className="mt-5">
-                                <button className="py-2 px-4 bg-red-600 hover:bg-red-400 hover:text-black focus:ring-grey-400 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer">Cancel</button>
+                                <NavLink to="/clients/card"><button className="py-2 px-4 bg-red-600 hover:bg-red-400 hover:text-black focus:ring-grey-400 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer">Cancel</button></NavLink>
                             </div>
                         </div>
                     </div>
                 </form>
                 <div className='w-2/3 h-full'>
-                    <img className='object-cover rounded-r-xl ' src="https://i.pinimg.com/564x/df/46/89/df4689a5b8ce111bf09d4d81c1d1184c.jpg" alt="credit and hand" />
+                    <img className='object-cover w-full h-full rounded-r-xl' src="https://i.pinimg.com/564x/df/46/89/df4689a5b8ce111bf09d4d81c1d1184c.jpg" alt="credit and hand" />
                 </div>
             </div>
 
