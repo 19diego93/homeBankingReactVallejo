@@ -34,10 +34,11 @@ const Login = () => {
             let client = responseCurrent.data;
             client.token = token;
             dispatch(login(client));
+            navigate("/clientHome");
             console.log(client);
             console.log(client.token);
 
-            navigate("/clientHome");
+
 
         } catch (error) {
             console.log(error);

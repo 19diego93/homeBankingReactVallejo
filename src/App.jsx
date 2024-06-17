@@ -34,7 +34,7 @@ function App() {
               <Route path="register" element={<Register />} />,
             ]}
 
-            <Route path="*" element={<Navigate to="/" />} />
+            {loggedIn ? <Route path="*" element={<Navigate to="/clientHome" />} /> : <Route path="*" element={<Navigate to="/" />} />}
           </Route>
         </Routes>
       </BrowserRouter>
