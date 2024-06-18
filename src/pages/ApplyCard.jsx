@@ -12,10 +12,27 @@ const ApplyCard = () => {
 
     const requestNewCard = async (e) => {
         e.preventDefault();
+
+        const payload = {
+            cardType: selectedCardType,
+            cardColor: selectedCardColor
+        };
+
+        // Set the headers for the POST request.
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        };
+
         try {
-            const response = await axios.post('http://localhost:8080/api/clients/cards', { cardType: selectedCardType, cardColor: selectedCardColor }, { headers: { Authorization: `Bearer ${token}` } });
-            alert(response.data)
-        } catch (error) { console.log(error) }
+            const response = await axios.post('http://localhost:8080/api/clients/current/cards', payload, config);
+            alert("Card created successfully")
+        } catch (error) {
+            console.log(error)
+            console.log(error.response.data)
+            alert("Error creating card")
+        }
     }
 
 
@@ -37,6 +54,7 @@ const ApplyCard = () => {
                                         onChange={(e) => setSelectedCardType(e.target.value)}
                                         value={selectedCardType}
                                     >
+                                        <option value="">Select a type</option>
                                         <option value="DEBIT">Debit</option>
                                         <option value="CREDIT">Credit</option>
 
@@ -51,6 +69,7 @@ const ApplyCard = () => {
                                         onChange={(e) => setSelectedCardColor(e.target.value)}
                                         value={selectedCardColor}
                                     >
+                                        <option value="">Select a color</option>
                                         <option value="SILVER">Silver</option>
                                         <option value="GOLD">Gold</option>
                                         <option value="TITANIUM">Titanium</option>
