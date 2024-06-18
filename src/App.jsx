@@ -11,6 +11,7 @@ import Home from "./pages/Home.jsx"
 import Register from "./pages/Register.jsx"
 import ClientHome from "./pages/ClientHome.jsx"
 import Transactions from "./pages/Transactions.jsx"
+import AccountDetails from "./pages/AccountDetails.jsx"
 import { useSelector } from "react-redux"
 
 function App() {
@@ -21,20 +22,21 @@ function App() {
         <Routes>
           <Route path="/" element={<HeaderMainFooter />}>
             {loggedIn ? [
-              <Route path="clients/account" element={<Accounts />} />,
-              <Route path="clients/loan" element={<Loans />} />,
-              <Route path="clients/card" element={<CardWallet />} />,
-              <Route path="clients/transaction" element={<Transactions />} />,
-              <Route path="clients/card/applycard" element={<ApplyCard />} />,
-              <Route path="clients/loan/applyloan" element={<ApplyLoan />} />,
-              <Route path="clientHome" element={<ClientHome />} />
+              <Route key="1" path="clients/account" element={<Accounts />} />,
+              <Route key="2" path="clients/account/:id" element={<AccountDetails />} />,
+              <Route key="3" path="clients/loan" element={<Loans />} />,
+              <Route key="4" path="clients/card" element={<CardWallet />} />,
+              <Route key="5" path="clients/transaction" element={<Transactions />} />,
+              <Route key="6" path="clients/card/applycard" element={<ApplyCard />} />,
+              <Route key="7" path="clients/loan/applyloan" element={<ApplyLoan />} />,
+              <Route key="8" path="clientHome" element={<ClientHome />} />
             ] : [
-              <Route path="/" element={<Home />} />,
-              <Route path="login" element={<Login />} />,
-              <Route path="register" element={<Register />} />,
+              <Route key="9" path="/" element={<Home />} />,
+              <Route key="10" path="login" element={<Login />} />,
+              <Route key="11" path="register" element={<Register />} />,
             ]}
 
-            {loggedIn ? <Route path="*" element={<Navigate to="/clientHome" />} /> : <Route path="*" element={<Navigate to="/" />} />}
+            {loggedIn ? <Route key="default" path="*" element={<Navigate to="/clientHome" />} /> : <Route key="default" path="*" element={<Navigate to="/" />} />}
           </Route>
         </Routes>
       </BrowserRouter>

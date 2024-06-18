@@ -37,8 +37,8 @@ const Register = () => {
 
     return (
         <div className="flex flex-col items-center ">
-            <h2 className='text-center pt-5 text-4xl'>Register</h2>
-            <form className="flex flex-col gap-4 border border-gray-200 rounded-xl bg-gray-200 p-5 min-w-[300px] md:w-[600px] mt-5" onSubmit={handleSubmit}>
+            <h2 className='text-center font-bold pt-5 text-4xl'>Register</h2>
+            <form className="flex flex-col gap-4 border border-gray-200 rounded-xl bg-gray-200 p-5 min-w-[300px] md:w-[600px] mt-5 mb-5" onSubmit={handleSubmit}>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="name" value="Your name" />

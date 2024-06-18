@@ -114,7 +114,7 @@ const ClientHome = () => {
 
             <div className="flex flex-col items-center justify-center p-4 ">
                 <section className="w-full lg:w-4/5 p-4 bg-blue-100 rounded-lg">
-                    <h2 className="text-xl font-bold mb-4 duration-200 hover:scale-125">Our Partners</h2>
+                    <h2 className="text-xl font-bold mb-4 ">Our Partners</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         <Card
                             className="max-w-sm "
