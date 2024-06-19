@@ -24,6 +24,9 @@ const Loans = () => {
 
         fetchClientLoans();
     }, [token]);
+    if (!loans) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <>

@@ -21,6 +21,9 @@ const CardWallet = () => {
 
         fetchData();
     }, [token]);
+    if (!cards) {
+        return <div>Loading...</div>;
+    }
 
     const cardDebit = cards.filter(card => card.cardType === "DEBIT") || [];
     const cardCredit = cards.filter(card => card.cardType === "CREDIT") || [];
