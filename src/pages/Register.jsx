@@ -43,7 +43,7 @@ const Register = () => {
                 email: email,
                 password: repeatPassword
             });
-            alert(response.data);
+            toast.success(response.data);
             navigate('/login');
 
         } catch (error) {

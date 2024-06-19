@@ -48,7 +48,6 @@ const Transactions = () => {
         };
 
         try {
-
             // Make a POST request to the server to process the transaction.
             const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/transactions', payload, config);
             console.log(response.data); // Log the response data.

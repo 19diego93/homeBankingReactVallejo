@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ApplyLoan = () => {
 
@@ -15,6 +17,7 @@ const ApplyLoan = () => {
     const [installments, setInstallments] = useState([]);
     const [selectedInstallment, setSelectedInstallment] = useState("");
     const [idLoan, setIdLoan] = useState(0);
+
 
     useEffect(() => {
         const fetchClientAccounts = async () => {
@@ -64,9 +67,10 @@ const ApplyLoan = () => {
         try {
             const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/loans', payload, config);
             console.log(response.data);
-            alert('Loan applied successfully!');
+            toast.success('Loan applied successfully!');
         } catch (error) {
             console.log(error);
+            toast.warn(error.response.data);
         }
     };
 
@@ -143,7 +147,7 @@ const ApplyLoan = () => {
                     <img className='object-cover w-full h-full rounded-r-xl ' src="https://i.pinimg.com/564x/91/46/82/914682b99ea64242b8cc3d68ffa40a12.jpg" alt="credit and hand" />
                 </div>
             </div>
-
+            <ToastContainer position='bottom-right' theme='dark' />
         </div>
     )
 }

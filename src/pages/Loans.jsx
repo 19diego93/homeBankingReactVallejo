@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom'
 import { Button } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Loans = () => {
@@ -32,6 +34,8 @@ const Loans = () => {
 
             <Button className='bg-[#AB9144]' color="dark" size="lg" ><NavLink to="/clients/loan/applyloan">Request Loan</NavLink></Button>
 
+
+            <ToastContainer position="bottom-right" theme='dark' />
         </>
     )
 }

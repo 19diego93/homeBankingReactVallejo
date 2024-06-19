@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ApplyCard = () => {
 
@@ -27,11 +29,11 @@ const ApplyCard = () => {
 
         try {
             const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/clients/current/cards', payload, config);
-            alert("Card created successfully")
+            toast.success("Card created successfully")
         } catch (error) {
             console.log(error)
-            console.log(error.response.data)
-            alert("Error creating card")
+            toast.warn(error.response.data)
+
         }
     }
 

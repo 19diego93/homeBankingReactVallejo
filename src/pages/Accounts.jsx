@@ -5,6 +5,8 @@ import { Button } from 'flowbite-react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Accounts = () => {
   const token = useSelector(store => store.auth.token);
@@ -19,7 +21,7 @@ const Accounts = () => {
         setAccountList(response.data);
       } catch (error) {
         console.error(error);
-        alert(error.response.data);
+        toast.warn(error.response.data);
       }
     }
 
@@ -68,6 +70,7 @@ const Accounts = () => {
 
       <CarouselBanner widthHeight={"w-[90%] h-[220px]"} />
 
+      <ToastContainer position='bottom-right' theme='dark' />
 
     </>
   )
