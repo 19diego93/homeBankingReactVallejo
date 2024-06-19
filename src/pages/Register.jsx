@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Label, TextInput } from "flowbite-react";
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'flowbite-react';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'; // Add this line to import axios library
 
