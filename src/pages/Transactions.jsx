@@ -3,6 +3,8 @@ import { Button } from "flowbite-react"
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // This component handles the transactions between accounts.
 const Transactions = () => {
     // State variables to hold account data and form inputs.
@@ -53,7 +55,7 @@ const Transactions = () => {
             console.log(response.data); // Log the response data.
         } catch (error) {
             console.log(error); // Log any errors.
-            alert(error.response.data);
+            toast.warn(error.response.data);
         }
     };
 

@@ -18,7 +18,7 @@ const Header = () => {
     setTimeout(() => {
 
       dispatch(logout());
-    }, 1500);
+    }, 2000);
   };
 
   return (
