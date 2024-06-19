@@ -12,7 +12,7 @@ const HeaderMainFooter = () => {
       <footer className="min-h-[10vh] bg-black flex flex-col flex-wrap justify-around items-center py-3 gap-2 text-white">
         <p>© 2024 - All rights reserved</p>
         <div className='flex felx-wrap justify-around w-full'>
-          <img src="" alt="insta" /><img src="" alt="fb" /><img src="" alt="whatsapp" />
+          <img src="../../img/insta.png" alt="insta" /><img src="../../img/faceb.png" alt="fb" /><img src="../../img/wassap.png" alt="whatsapp" /><img src="../../img/linke.png" alt="linkedin" />
         </div>
       </footer></>
   )

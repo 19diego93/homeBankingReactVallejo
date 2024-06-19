@@ -20,7 +20,7 @@ const Login = () => {
     const navigate = useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
-
+        toast.loading('Loading...');
         const user = {
             email: email,
             password: password

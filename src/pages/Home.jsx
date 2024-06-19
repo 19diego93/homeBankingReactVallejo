@@ -86,25 +86,32 @@ const Home = () => {
                 </div>
             </section>
             <section className="flex flex-col items-center justify-center mt-4 lg:mt-10 w-[95%] bg-white rounded-xl shadow-lg p-10">
-                <h3 className="text-2xl font-semibold tracking-tight text-gray-900 bg-[#add8e6] py-3 px-7 rounded-lg">Contact Us</h3>
-                <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit}>
-                    <input type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={handleEmailChange}
-                        className="px-4 py-2 border border-gray-700 rounded-lg"
-                    />
-                    <textarea
-                        placeholder="Message"
-                        value={message}
-                        onChange={handleMessageChange}
-                        rows={5}
-                        className="px-4 py-2 border border-gray-700 rounded-lg"
-                    ></textarea>
-                    <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-lg">Send</button></form>
-
-
-            </section >
+                <div className="flex flex-col lg:flex-row items-center justify-between">
+                    <div className="w-full lg:w-1/2">
+                        <h3 className="text-2xl font-semibold tracking-tight text-gray-900 bg-[#add8e6] py-3 px-7 rounded-lg">Contact Us</h3>
+                        <p className="mt-4 text-lg">If you have any questions or need further information, please don't hesitate to contact us. We're here to help and would love to assist you with anything you need. Your satisfaction is our priority, and we look forward to hearing from you.</p>
+                    </div>
+                    <div className="w-full lg:w-1/2 mt-6 lg:mt-0">
+                        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                            <input type="text" placeholder='Name' className="px-4 py-2 border border-gray-700 rounded-lg" />
+                            <input type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={handleEmailChange}
+                                className="px-4 py-2 border border-gray-700 rounded-lg"
+                            />
+                            <textarea
+                                placeholder="Message"
+                                value={message}
+                                onChange={handleMessageChange}
+                                rows={5}
+                                className="px-4 py-2 border border-gray-700 rounded-lg"
+                            ></textarea>
+                            <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-lg">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
 
 
             <div className='my-5 p-5 rounded-lg flex justify-center w-full h-[300px]'>
