@@ -49,7 +49,7 @@ const Home = () => {
             </section>
             <section className='flex flex-col items-center justify-center mt-4 lg:mt-10 w-[95%] bg-white rounded-xl shadow-lg p-10' >
                 <h3 className="text-2xl font-semibold tracking-tight text-gray-900 bg-[#add8e6] py-2 px-4 rounded-lg">About Us</h3>
-                <div className="flex flex-col justify-center items-center xl:flex-row mt-10 gap-5 w-full ">
+                <div className="flex flex-wrap flex-col justify-center items-center xl:flex-row mt-10 gap-5 w-full ">
                     <Card className="w-[95%] lg:w-[500px] bg-[#add8e6]" imgSrc="../../img/eCommerce3.png" horizontal>
                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
                             WolfBank Offers Competitive Loan and Credit Services

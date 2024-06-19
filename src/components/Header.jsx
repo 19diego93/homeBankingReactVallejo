@@ -14,9 +14,9 @@ const Header = () => {
   const isLoggedIn = user.loggedIn;
 
   const clientLogout = () => {
-
+    toast.success('Logging out...');
     setTimeout(() => {
-      toast.success('Logging out...');
+
       dispatch(logout());
     }, 1500);
   };
@@ -31,7 +31,7 @@ const Header = () => {
           {isLoggedIn ? clientAnchorArray.map((link) => <Anchor key={link.name} name={link.name} theRef={link.theRef} />) : navAnchorArray.map((link) => <Anchor key={link.name} name={link.name} theRef={link.theRef} />)}
         </nav>
       </header>
-      <ToastContainer position="top-center" autoClose={2000} />
+      <ToastContainer position="bottom-right" autoClose={1500} />
     </>
   )
 }
