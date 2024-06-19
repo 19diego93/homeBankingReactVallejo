@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button, Label, TextInput } from "flowbite-react";
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'flowbite-react';
 
 import axios from 'axios'; // Add this line to import axios library
 
@@ -10,17 +11,33 @@ const Register = () => {
     const [repeatPassword, setRepeatPassword] = useState('');
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [errorEmail, setErrorEmail] = useState(false);
+    const [errorPassword, setErrorPassword] = useState(false);
+    const [errorRepeatPassword, setErrorRepeatPassword] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => { // Change the function declaration to async
         event.preventDefault();
         if (password !== repeatPassword) {
-            alert('Passwords do not match');
+            setErrorRepeatPassword(true);
+            toast.error('Passwords do not match');
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            setErrorEmail(true);
+            toast.error('Invalid email');
+            return;
+        }
+
+        if (!isValidPassword(password)) {
+            setErrorPassword(true);
+            toast.error('Password must be at least 6 characters');
             return;
         }
 
         try {
-            const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/auth/signup', { // Change the axios call to use await
+            const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/auth/signup', {
                 firstName: name,
                 lastName: lastName,
                 email: email,
@@ -33,6 +50,15 @@ const Register = () => {
             console.log(error);
             alert(error.response.data);
         }
+    };
+
+    const isValidEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+    const isValidPassword = (password) => {
+        return password.length >= 6;
     };
 
     return (
@@ -55,24 +81,35 @@ const Register = () => {
                     <div className="mb-2 block">
                         <Label htmlFor="email2" value="Your email" />
                     </div>
-                    <TextInput id="email2" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="name@flowbite.com" required shadow />
+                    <TextInput id="email2" type="email" value={email} onChange={(e) => {
+                        setErrorEmail(false);
+                        setEmail(e.target.value);
+                    }} placeholder="name@flowbite.com" required shadow error={errorEmail} helpText="Invalid email" />
                 </div>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="password2" value="Your password" />
                     </div>
-                    <TextInput id="password2" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required shadow />
+                    <TextInput id="password2" type="password" value={password} onChange={(e) => {
+                        setErrorPassword(false);
+                        setPassword(e.target.value);
+                    }} required shadow error={errorPassword} helpText="Password must be at least 6 characters" />
                 </div>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="repeat-password" value="Repeat password" />
                     </div>
-                    <TextInput id="repeat-password" type="password" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} required shadow />
+                    <TextInput id="repeat-password" type="password" value={repeatPassword} onChange={(e) => {
+                        setErrorRepeatPassword(false);
+                        setRepeatPassword(e.target.value);
+                    }} required shadow error={errorRepeatPassword} helpText="Passwords do not match" />
                 </div>
 
                 <Button type="submit"> Register </Button>
             </form>
+            <ToastContainer position='bottom-right' theme='dark' />
         </div>
     );
 }
+
 export default Register;
