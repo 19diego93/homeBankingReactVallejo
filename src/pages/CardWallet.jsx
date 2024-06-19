@@ -35,13 +35,13 @@ const CardWallet = () => {
                 <div className='p-4 bg-white rounded-lg'>
                     <h3 className='pl-10 text-2xl pt-3 '>Credit</h3>
                     <div className=' py-3 flex flex-wrap justify-around items-center w-full gap-4'>
-                        {cardCredit.length > 0 ? cardCredit.map(card => <Cards key={card.id} typeCard={card.cardType} number={card.number} cardHolder={card.cardHolder} expirationDate={card.expirationDate} cvv={card.cvv} cardColor={card.color} />) : <p>You do not have credit card.</p>}
+                        {cardCredit.length > 0 ? cardCredit.map(card => <Cards key={card.id} typeCard={card.cardType} number={card.number} cardHolder={card.cardHolder} creationDate={card.creationDate} expirationDate={card.expirationDate} cvv={card.cvv} cardColor={card.color} />) : <p>You do not have credit card.</p>}
                     </div>
                 </div>
                 <div className='p-4 bg-white rounded-lg'>
                     <h3 className='pl-10 text-2xl pt-3 '>Debit</h3>
                     <div className=' py-3 flex flex-wrap justify-around items-center w-full gap-4'>
-                        {cardDebit.length > 0 ? cardDebit.map(card => <Cards key={card.id} typeCard={card.cardType} number={card.number} cardHolder={card.cardHolder} expirationDate={card.expirationDate} cvv={card.cvv} cardColor={card.color} />) : <p>You do not have debit card.</p>}
+                        {cardDebit.length > 0 ? cardDebit.map(card => <Cards key={card.id} typeCard={card.cardType} number={card.number} cardHolder={card.cardHolder} creationDate={card.creationDate} expirationDate={card.expirationDate} cvv={card.cvv} cardColor={card.color} />) : <p>You do not have debit card.</p>}
                     </div>
                 </div>
             </div>
