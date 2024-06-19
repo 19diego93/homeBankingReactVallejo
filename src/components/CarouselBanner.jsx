@@ -4,10 +4,10 @@ const CarouselBanner = ({ widthHeight }) => {
   return (
     <div className={widthHeight}>
       <Carousel slideInterval={5000} pauseOnHover>
-        <img src="https://thedicedungeon.co.uk/cdn/shop/articles/Dungeons_and_Dragons_Classes.jpg?v=1591716758&width=900" alt="1" />
-        <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/12/rules-DD-players-can-ignore.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5" alt="2" />
-        <img src="https://shopzobie.com/cdn/shop/files/Luffy-Gear-Five-Gold-Bank-Note-Prop-One-Piece-Anime_1800x1800.jpg?v=1714464214" alt="3" />
-        <img src="https://media.traveler.es/photos/61376f0b68a6ada2592a7261/master/w_1600,c_limit/136788.jpg" alt="4" />
+        <img src="../../public/img/bank-finance-horizontal-sale-banner-template_23-2149726028.jpg" alt="1" />
+        <img src="../../public/img/bank-service-concept-facebook-cover-template_23-2150459496.jpg" alt="2" />
+        <img src="../../public/img/illustration-of-banking-banking-equipment-concept-modern-bank-reception-office-interior-horizontal-banner-vector.jpg" alt="3" />
+        <img src="../../public/img/bank-service-concept-sale-banner-template_23-2150487020.jpg" alt="4" />
       </Carousel>
     </div>
   )

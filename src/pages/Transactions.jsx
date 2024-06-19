@@ -60,7 +60,7 @@ const Transactions = () => {
 
     // Render the component.
     return (
-        <div className="my-5 flex items-center justify-center bg-gray-100 min-h-70vh">
+        <div className="my-5 flex items-center justify-center bg-gray-100 min-h-70vh p-8 rounded-lg">
             <div className="w-[400px]">
                 <h1 className="text-2xl font-bold mb-6">Transactions</h1>
                 <form className="space-y-6">

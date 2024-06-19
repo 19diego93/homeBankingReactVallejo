@@ -63,7 +63,7 @@ const Login = () => {
                     </div>
                     <button className='mt-5 bg-[#AB9144] rounded-lg p-2 hover:bg-[#add8e6] font-semibold' type="submit" size="lg" onClick={handleLogin} >Login</button>
                 </form>
-                <NavLink className='mt-5 text-[#AB9144] text-semibold underline hover:bg-[#add8e6] p-2 rounded-lg' to="/register">Don't have an account? Register</NavLink>
+                <NavLink className='mt-5 text-black text-semibold underline hover:bg-[#add8e6] p-2 rounded-lg' to="/register">Don't have an account? Register</NavLink>
             </div>
             <ToastContainer position='bottom-right' theme='dark' />
         </>
