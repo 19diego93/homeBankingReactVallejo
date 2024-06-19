@@ -20,19 +20,19 @@ const Register = () => {
         event.preventDefault();
         if (password !== repeatPassword) {
             setErrorRepeatPassword(true);
-            toast.error('Passwords do not match');
+            toast.warn('Passwords do not match');
             return;
         }
 
         if (!isValidEmail(email)) {
             setErrorEmail(true);
-            toast.error('Invalid email');
+            toast.warn('Invalid email');
             return;
         }
 
         if (!isValidPassword(password)) {
             setErrorPassword(true);
-            toast.error('Password must be at least 6 characters');
+            toast.warn('Password must be at least 6 characters');
             return;
         }
 
@@ -48,7 +48,7 @@ const Register = () => {
 
         } catch (error) {
             console.log(error);
-            alert(error.response.data);
+            toast.error(error.response.data);
         }
     };
 
