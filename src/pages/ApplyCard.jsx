@@ -26,7 +26,7 @@ const ApplyCard = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8080/api/clients/current/cards', payload, config);
+            const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/clients/current/cards', payload, config);
             alert("Card created successfully")
         } catch (error) {
             console.log(error)

@@ -20,7 +20,7 @@ const Register = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:8080/api/auth/signup', { // Change the axios call to use await
+            const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/auth/signup', { // Change the axios call to use await
                 firstName: name,
                 lastName: lastName,
                 email: email,

@@ -16,7 +16,7 @@ const AccountDetails = () => {
     useEffect(() => {
         const fetchTransactions = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/accounts/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+                const response = await axios.get(`https://homebanking-app-2u3u.onrender.com/api/accounts/${id}`, { headers: { Authorization: `Bearer ${token}` } });
 
                 setAccount(response.data);
                 setTransactions(response.data.transactions);

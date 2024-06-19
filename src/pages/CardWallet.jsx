@@ -12,7 +12,7 @@ const CardWallet = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/auth/current', { headers: { Authorization: `Bearer ${token}` } });
+                const response = await axios.get('https://homebanking-app-2u3u.onrender.com/api/auth/current', { headers: { Authorization: `Bearer ${token}` } });
                 setCards(response.data.cards);
             } catch (error) {
                 console.error(error);

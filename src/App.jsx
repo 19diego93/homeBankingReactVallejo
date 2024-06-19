@@ -14,6 +14,7 @@ import Transactions from "./pages/Transactions.jsx"
 import AccountDetails from "./pages/AccountDetails.jsx"
 import { useSelector } from "react-redux"
 
+
 function App() {
   const { loggedIn } = useSelector(store => store.auth)
   return (
@@ -36,10 +37,13 @@ function App() {
               <Route key="11" path="register" element={<Register />} />,
             ]}
 
+            //rutas por defecto error url loggeado y deslogeado
             {loggedIn ? <Route key="default" path="*" element={<Navigate to="/clientHome" />} /> : <Route key="default" path="*" element={<Navigate to="/" />} />}
           </Route>
+
         </Routes>
       </BrowserRouter>
+
     </>
   )
 }

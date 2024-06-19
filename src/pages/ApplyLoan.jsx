@@ -19,13 +19,13 @@ const ApplyLoan = () => {
     useEffect(() => {
         const fetchClientAccounts = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/clients/accounts/current', { headers: { Authorization: `Bearer ${token}` } });
+                const response = await axios.get('https://homebanking-app-2u3u.onrender.com/api/clients/accounts/current', { headers: { Authorization: `Bearer ${token}` } });
                 setClientAccounts(response.data);
             } catch (error) { console.log(error) };
         }
         const fetchLoans = async () => {
             try {
-                const listLoans = await axios.get('http://localhost:8080/api/loans', { headers: { Authorization: `Bearer ${token}` } });
+                const listLoans = await axios.get('https://homebanking-app-2u3u.onrender.com/api/loans', { headers: { Authorization: `Bearer ${token}` } });
                 setLoans(listLoans.data);
             } catch (error) { console.log(error) }
         }
@@ -62,7 +62,7 @@ const ApplyLoan = () => {
             }
         };
         try {
-            const response = await axios.post('http://localhost:8080/api/loans', payload, config);
+            const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/loans', payload, config);
             console.log(response.data);
             alert('Loan applied successfully!');
         } catch (error) {

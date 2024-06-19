@@ -19,7 +19,7 @@ const Transactions = () => {
     useEffect(() => {
         const fetchAccounts = async () => {
             // Make a GET request to the server to fetch the list of accounts.
-            const response = await axios.get('http://localhost:8080/api/auth/current', { headers: { Authorization: `Bearer ${token}` } });
+            const response = await axios.get('https://homebanking-app-2u3u.onrender.com/api/auth/current', { headers: { Authorization: `Bearer ${token}` } });
             setAccounts(response.data.accounts); // Update the accounts state with the fetched data.
         };
         fetchAccounts();
@@ -50,7 +50,7 @@ const Transactions = () => {
         try {
 
             // Make a POST request to the server to process the transaction.
-            const response = await axios.post('http://localhost:8080/api/transactions', payload, config);
+            const response = await axios.post('https://homebanking-app-2u3u.onrender.com/api/transactions', payload, config);
             console.log(response.data); // Log the response data.
         } catch (error) {
             console.log(error); // Log any errors.

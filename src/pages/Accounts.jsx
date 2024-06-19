@@ -15,7 +15,7 @@ const Accounts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/clients/accounts/current`, { headers: { Authorization: `Bearer ${token}` } });
+        const response = await axios.get(`https://homebanking-app-2u3u.onrender.com/api/clients/accounts/current`, { headers: { Authorization: `Bearer ${token}` } });
         setAccountList(response.data);
       } catch (error) {
         console.error(error);
@@ -32,7 +32,7 @@ const Accounts = () => {
 
   const handleCreatAccount = async () => {
     try {
-      const postResponse = await axios.post(`http://localhost:8080/api/clients/accounts/current`, { hello: 'world' }, { headers: { Authorization: `Bearer ${token}` } });
+      const postResponse = await axios.post(`https://homebanking-app-2u3u.onrender.com/api/clients/accounts/current`, { hello: 'world' }, { headers: { Authorization: `Bearer ${token}` } });
       alert(postResponse.data);
       console.log(postResponseP);
     } catch (error) {
