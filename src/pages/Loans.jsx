@@ -10,11 +10,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Loans = () => {
     const token = useSelector(store => store.auth.token);
-    const [loans, setLoans] = useState([]);
+    const [loans, setLoans] = useState(null);
 
     useEffect(() => {
         const fetchClientLoans = async () => {
             try {
+
                 const response = await axios.get('https://homebanking-app-2u3u.onrender.com/api/auth/current', { headers: { Authorization: `Bearer ${token}` } });
                 setLoans(response.data.loans);
             } catch (error) {
@@ -24,10 +25,10 @@ const Loans = () => {
 
         fetchClientLoans();
     }, [token]);
+
     if (!loans) {
         return <div>Loading...</div>;
     }
-
     return (
         <>
             <h1 className='text-center pt-5 text-4xl'>Your Loans</h1>

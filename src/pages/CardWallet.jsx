@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 const CardWallet = () => {
     const { token } = useSelector(state => state.auth);
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
