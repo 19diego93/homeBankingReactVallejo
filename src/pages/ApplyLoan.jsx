@@ -90,7 +90,7 @@ const ApplyLoan = () => {
                                         className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-gray-800 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                                         id="loanType" onChange={(e) => setSelectedLoan(e.target.value)}
                                     >
-                                        <option value="Select">Select one</option>
+                                        <option disabled>Select one</option>
                                         {loans.map((loan) => (
                                             <option key={loan.id} value={loan.name}>
                                                 {loan.name}
@@ -104,7 +104,7 @@ const ApplyLoan = () => {
                                     <select
                                         className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full bg-gray-800 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                                         id="account" onChange={(e) => setDestinyAccount(e.target.value)}
-                                    >   <option value="Select">Select one</option>
+                                    >   <option disabled>Select one</option>
                                         {clientAccounts.map((account) => (
                                             <option key={account.id} value={account.number}>
                                                 {account.number}

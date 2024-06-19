@@ -67,13 +67,14 @@ const Transactions = () => {
                 <form className="space-y-6">
                     <div className="flex flex-col">
                         <label htmlFor="account" className="text-sm font-medium">Accounts</label>
+                        {selectedAccount && <p>Balance: ${selectedAccount.balance}</p>}
                         <select
                             id="account"
                             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                             value={selectedAccount}
                             onChange={(e) => setSelectedAccount(e.target.value)}
                         >
-                            <option value="">Choose one</option>
+                            <option disabled>Choose one</option>
                             {accounts.map((account) => (
                                 <option key={account.id} value={account.number}>{account.number}</option>
                             ))}
