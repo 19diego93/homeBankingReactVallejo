@@ -26,7 +26,7 @@ const AccountDetails = () => {
         }
         fetchTransactions();
     }, [id]);
-
+    if (account == {} && transactions == []) return <div>Loading...</div>
     return (
         <>
             <div className="flex flex-col items-center justify-center gap-5 w-full lg:flex-row lg:justify-between min-h-70vh">
