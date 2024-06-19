@@ -48,9 +48,9 @@ const Home = () => {
                 </div>
             </section>
             <section className='flex flex-col items-center justify-center mt-4 lg:mt-10 w-[95%] bg-white rounded-xl shadow-lg p-10' >
-                <h3 className="text-2xl font-semibold tracking-tight text-gray-900 bg-[#add8e6] py-3 px-7 rounded-lg">About Us</h3>
-                <div className="flex flex-col justify-center items-center lg:flex-row mt-10 gap-5 w-full ">
-                    <Card className="w-[95%] lg:w-[45%] bg-[#add8e6]" imgSrc="../../img/eCommerce3.png" horizontal>
+                <h3 className="text-2xl font-semibold tracking-tight text-gray-900 bg-[#add8e6] py-2 px-4 rounded-lg">About Us</h3>
+                <div className="flex flex-col justify-center items-center xl:flex-row mt-10 gap-5 w-full ">
+                    <Card className="w-[95%] lg:w-[500px] bg-[#add8e6]" imgSrc="../../img/eCommerce3.png" horizontal>
                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
                             WolfBank Offers Competitive Loan and Credit Services
                         </h5>
@@ -58,7 +58,7 @@ const Home = () => {
                             WolfBank is now offering a range of competitive loan and credit services to meet your financial needs. Whether you're looking for a personal loan, mortgage, or business credit, our streamlined application process and attractive rates make borrowing easy. Visit our website to learn more and apply online today.
                         </p>
                     </Card>
-                    <Card className="w-[95%] bg-[#add8e6]" imgSrc="../../img/eCommerce1.png" horizontal>
+                    <Card className="w-[95%] lg:w-[500px] bg-[#add8e6]" imgSrc="../../img/eCommerce1.png" horizontal>
                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
                             WolfBank Launches Innovative Financial Planning Tools
                         </h5>
@@ -66,7 +66,7 @@ const Home = () => {
                             WolfBank is excited to introduce a new suite of financial planning tools designed to help you achieve your financial goals. Our tools offer personalized budgeting assistance, savings goal trackers, and investment advice tailored to your unique needs.
                         </p>
                     </Card>
-                    <Card className="w-[95%] bg-[#add8e6]" imgSrc="../../img/iaBank1.png" horizontal>
+                    <Card className="w-[95%] lg:w-[500px] bg-[#add8e6]" imgSrc="../../img/iaBank1.png" horizontal>
                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
                             WolfBank Recognized for Excellence in Customer Support
                         </h5>
@@ -74,7 +74,7 @@ const Home = () => {
                             We are proud to announce that WolfBank has received the "Excellence in Customer Support" award from the Financial Services Association. This award highlights our dedication to providing exceptional 24/7 customer service.
                         </p>
                     </Card>
-                    <Card className="w-[95%] bg-[#add8e6]" imgSrc="../../img/aiBank2.jpg" horizontal>
+                    <Card className="w-[95%] lg:w-[500px] bg-[#add8e6]" imgSrc="../../img/aiBank2.jpg" horizontal>
                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
                             WolfBank Named "Most Innovative Bank" of the Year
                         </h5>
